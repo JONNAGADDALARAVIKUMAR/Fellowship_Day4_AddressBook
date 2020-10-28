@@ -14,7 +14,6 @@ public class AddressBookPojo {
 		this.zip = zip;
 		this.phone = phone;
 		this.email = email;
-		
 	}
 
 	@Override
