@@ -1,9 +1,13 @@
 package addressBookPojo1;
 
+import addressBookPojo.AddressBookDAO;
+
 public class AddressBookMain {
 
 	public static void main(String[] args) {
-		System.out.println("Welcome to Address Book");
+		
+		AddressBookDAO addressBookDAO = new  AddressBookDAO();
+		
+		addressBookDAO.getDetails();
 	}
-
 }
