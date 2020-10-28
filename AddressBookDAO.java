@@ -33,7 +33,7 @@ public class AddressBookDAO {
         
         AddressBookPojo newAddressBookPojo=new AddressBookPojo(firstName,lastName,address,city,state,zip,phone,email);
         addressBook.add(newAddressBookPojo);
-        System.out.println("\n\nAdded Successfully");
+        System.out.println("\nAdded Successfully");
       }
     public void displayContacts()
     {
@@ -54,6 +54,25 @@ public class AddressBookDAO {
     		{
     			addressBook.remove(details);
     			getDetails();
+    		}
+    		else
+    		{
+    			System.out.println("Opps : Details you Entered are not Matched");
+    		}
+    	}
+    }
+    public void deleteContact()
+    {
+    	String deleteWith,contactDetails;
+    	System.out.print("\n\tEnter Email or Phone Number : ");
+    	deleteWith=scan.next();
+    	for(AddressBookPojo details : addressBook)
+    	{
+    		contactDetails=details.toString();
+    		if(contactDetails.contains(deleteWith))
+    		{
+    			addressBook.remove(details);
+    			System.out.println("\n\tDeleted Successfully\n");
     		}
     		else
     		{
