@@ -19,7 +19,6 @@ public class AddressBookPojo {
 
 	@Override
     public String toString() {
-        return "First Name = "+ firstName +", Last Name = "+lastName+", Address = "+address+", City = "+city+", State = "+state+", ZIP = "+zip+", Phone = "+phone+", Email = "+email;
-               
+        return "First Name = "+ firstName +", Last Name = "+lastName+", Address = "+address+", City = "+city+", State = "+state+", ZIP = "+zip+", Phone = "+phone+", Email = "+email;          
     }
 }

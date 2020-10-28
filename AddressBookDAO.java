@@ -32,8 +32,13 @@ public class AddressBookDAO {
         
         AddressBookPojo newAddressBookPojo=new AddressBookPojo(firstName,lastName,address,city,state,zip,phone,email);
         addressBook.add(newAddressBookPojo);
-        System.out.println("\n\nAdded Successfully\n\n"+addressBook);
-
+        System.out.println("\n\nAdded Successfully");
       }
-    
+    public void display()
+    {
+    	for(AddressBookPojo details : addressBook)
+    	{
+    		System.out.println(details);
+    	}
+    }
 }
