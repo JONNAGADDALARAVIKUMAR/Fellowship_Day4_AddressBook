@@ -13,6 +13,7 @@ public class AddressBookDAO {
     Scanner scan = new Scanner(System.in);
     
     public void getDetails() {
+    	
         System.out.print("\n\tCreate new Address\n\nFirst Name : ");
         String firstName=scan.next();
         System.out.print("Last Name : ");
@@ -34,11 +35,30 @@ public class AddressBookDAO {
         addressBook.add(newAddressBookPojo);
         System.out.println("\n\nAdded Successfully");
       }
-    public void display()
+    public void displayContacts()
     {
     	for(AddressBookPojo details : addressBook)
     	{
     		System.out.println(details);
+    	}
+    }
+    public void editContact()
+    {
+    	String editWith,contactDetails;
+    	System.out.print("\n\tEnter Email or Phone Number : ");
+    	editWith=scan.next();
+    	for(AddressBookPojo details : addressBook)
+    	{
+    		contactDetails=details.toString();
+    		if(contactDetails.contains(editWith))
+    		{
+    			addressBook.remove(details);
+    			getDetails();
+    		}
+    		else
+    		{
+    			System.out.println("Opps : Details you Entered are not Matched");
+    		}
     	}
     }
 }

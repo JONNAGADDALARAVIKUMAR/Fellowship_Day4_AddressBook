@@ -10,18 +10,26 @@ public class AddressBookMain {
 		Scanner scan = new Scanner(System.in);
 		
 		AddressBookDAO addressBookDAO = new  AddressBookDAO();
-		int choice=1,one=1,two=2;
+		int choice=1;
+		final int one=1,two=2,three=3;
 		
 		while(choice == one)//Adds Multiple contacts based on user choice
 		{
 			addressBookDAO.getDetails();
-			System.out.print("\nEnter   1.Create new Contact\n\t2.Display Contacts\n\nChoice : ");
+			System.out.print("\nEnter   1.Create new Contact\n\t2.Display Contacts\n\t3.Edit Contact\n\nChoice : ");
 			choice = scan.nextInt();
 			
-			if(choice==two)
+			switch (choice)
 			{
-				addressBookDAO.display();//displays the contacts in address book and terminates the loop
+			case two:
+				addressBookDAO.displayContacts();//displays the contacts in address book and terminates the loop
 				System.out.println("\n\tProgram Terminated");
+				break;
+			case three:
+				addressBookDAO.editContact();//Edits the contacts in address book
+				System.out.println("\nContact Edited Successfully");
+				addressBookDAO.displayContacts();//displays the Edited contacts in address book and terminates the loop
+				break;
 			}
 		}
 	}
